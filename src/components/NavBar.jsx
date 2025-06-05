@@ -245,7 +245,7 @@ const Navbar = () => {
                   }}
                   className="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full transition"
                 >
-                  Talk To Our Assistant
+                  Talk To The Team
                 </button>
               </nav>
             </div>
