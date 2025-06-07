@@ -6,6 +6,7 @@ import Fund from "./components/Fund";
 import Choose from "./components/Choose";
 import Ready from "./components/Ready";
 import Footer from "./components/Footer";
+import AboutUs from "./components/AboutUs";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
             <>
               <Display />
               <DayLight />
+
               <Fund />
               <Choose />
               <Ready />
@@ -25,6 +27,7 @@ export default function App() {
             </>
           }
         />
+        <Route path="/about-us" element={<AboutUs />} />
 
         {/* You can also add other routes like How It Works, etc., here later */}
       </Routes>
