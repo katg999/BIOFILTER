@@ -43,16 +43,12 @@ const Navbar = () => {
   return (
     <div
       className={`fixed top-0 left-0 right-0 z-50 transition-all ${
-        isScrolled ? "bg-[#E3F2E1] shadow-sm py-0" : "py-4"
+        isScrolled ? "bg-white shadow-sm py-0" : "py-4"
       }`}
-      style={{
-        background:
-          "linear-gradient(180deg, #E3F2E1 0%, #CFE6E3 50%, #A6D4E3 100%)",
-      }}
     >
       <div className="container mx-auto px-4">
         <nav
-          className={`bg-white/80 backdrop-blur-sm rounded-full shadow-md ${
+          className={`bg-white rounded-full shadow-md ${
             isScrolled ? "py-2" : "py-3"
           }`}
         >
@@ -60,7 +56,7 @@ const Navbar = () => {
             {/* Brand */}
             <Link
               to="/"
-              className="text-xl md:text-2xl font-bold text-[#1B4332] font-[Onest]"
+              className="text-xl md:text-2xl font-bold text-blue-600" // Using Tailwind's blue-600
               onClick={() => {
                 setActiveDropdown(null);
                 setMobileMenuOpen(false);
@@ -76,11 +72,11 @@ const Navbar = () => {
                   <div className="relative" key={item.name}>
                     <button
                       onClick={() => toggleDropdown(index)}
-                      className={`text-sm lg:text-base font-medium flex items-center font-[Onest] ${
+                      className={`text-sm lg:text-base font-medium flex items-center ${
                         isActive(item.path) ||
                         item.subItems.some((sub) => isActive(sub.path))
-                          ? "text-[#1B4332]"
-                          : "text-[#2D6A4F] hover:text-[#1B4332]"
+                          ? "text-blue-600"
+                          : "text-gray-800 hover:text-blue-600"
                       }`}
                     >
                       {item.name}
@@ -101,7 +97,7 @@ const Navbar = () => {
                       </svg>
                     </button>
                     <div
-                      className={`absolute z-20 bg-white/90 backdrop-blur-sm shadow-lg mt-2 rounded-lg w-48 overflow-hidden transition-all duration-200 ${
+                      className={`absolute z-20 bg-white shadow-lg mt-2 rounded-lg w-48 overflow-hidden transition-all duration-200 ${
                         activeDropdown === index
                           ? "opacity-100 translate-y-0"
                           : "opacity-0 translate-y-2 pointer-events-none"
@@ -112,10 +108,10 @@ const Navbar = () => {
                           key={sub.name}
                           to={sub.path}
                           onClick={() => setActiveDropdown(null)}
-                          className={`block px-4 py-2 text-sm hover:bg-[#D8F3DC] font-[Onest] ${
+                          className={`block px-4 py-2 text-sm hover:bg-gray-50 ${
                             isActive(sub.path)
-                              ? "text-[#1B4332] font-medium bg-[#B7E4C7]"
-                              : "text-[#2D6A4F]"
+                              ? "text-blue-600 font-medium bg-blue-50"
+                              : "text-gray-700"
                           }`}
                         >
                           {sub.name}
@@ -127,10 +123,10 @@ const Navbar = () => {
                   <Link
                     key={item.name}
                     to={item.path}
-                    className={`text-sm lg:text-base font-medium font-[Onest] ${
+                    className={`text-sm lg:text-base font-medium ${
                       isActive(item.path)
-                        ? "text-[#1B4332]"
-                        : "text-[#2D6A4F] hover:text-[#1B4332]"
+                        ? "text-blue-600"
+                        : "text-gray-800 hover:text-blue-600"
                     }`}
                   >
                     {item.name}
@@ -143,7 +139,7 @@ const Navbar = () => {
             <div className="hidden md:block">
               <button
                 onClick={() => window.voiceflow?.chat?.open?.()}
-                className="bg-[#40916C] hover:bg-[#2D6A4F] text-white font-medium py-2 px-4 lg:px-6 rounded-full transition text-sm lg:text-base font-[Onest]"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 lg:px-6 rounded-full transition text-sm lg:text-base"
               >
                 Get To Know More About Bio-Filter Initiative Uganda
               </button>
@@ -153,28 +149,26 @@ const Navbar = () => {
             <div className="md:hidden">
               <button
                 onClick={toggleMobileMenu}
-                className="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-[#40916C]"
+                className="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
-                <Bars3Icon className="w-6 h-6 text-[#1B4332]" />
+                <Bars3Icon className="w-6 h-6 text-gray-800" />
               </button>
             </div>
           </div>
 
           {/* Mobile Menu Drawer */}
           <div
-            className={`fixed top-0 right-0 h-full w-4/5 max-w-sm bg-white/95 backdrop-blur-sm shadow-xl transform transition-transform duration-300 ease-in-out z-50 ${
+            className={`fixed top-0 right-0 h-full w-4/5 max-w-sm bg-white shadow-xl transform transition-transform duration-300 ease-in-out z-50 ${
               mobileMenuOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
-            <div className="p-4 flex justify-between items-center border-b border-[#B7E4C7]">
-              <span className="text-lg font-semibold text-[#1B4332] font-[Onest]">
-                Menu
-              </span>
+            <div className="p-4 flex justify-between items-center border-b">
+              <span className="text-lg font-semibold">Menu</span>
               <button
                 onClick={toggleMobileMenu}
-                className="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-[#40916C]"
+                className="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
-                <XMarkIcon className="w-6 h-6 text-[#1B4332]" />
+                <XMarkIcon className="w-6 h-6 text-gray-800" />
               </button>
             </div>
             <div className="overflow-y-auto h-[calc(100%-60px)]">
@@ -184,11 +178,11 @@ const Navbar = () => {
                     <div key={item.name}>
                       <button
                         onClick={() => toggleDropdown(index)}
-                        className={`flex items-center justify-between w-full text-left text-base font-medium font-[Onest] ${
+                        className={`flex items-center justify-between w-full text-left text-base font-medium ${
                           isActive(item.path) ||
                           item.subItems.some((sub) => isActive(sub.path))
-                            ? "text-[#1B4332]"
-                            : "text-[#2D6A4F]"
+                            ? "text-blue-600"
+                            : "text-gray-800"
                         }`}
                       >
                         {item.name}
@@ -220,10 +214,10 @@ const Navbar = () => {
                             key={sub.name}
                             to={sub.path}
                             onClick={toggleMobileMenu}
-                            className={`block py-2 text-sm font-[Onest] ${
+                            className={`block py-2 text-sm ${
                               isActive(sub.path)
-                                ? "text-[#1B4332] font-medium"
-                                : "text-[#2D6A4F]"
+                                ? "text-blue-600 font-medium"
+                                : "text-gray-700"
                             }`}
                           >
                             {sub.name}
@@ -236,10 +230,8 @@ const Navbar = () => {
                       key={item.name}
                       to={item.path}
                       onClick={toggleMobileMenu}
-                      className={`block text-base font-medium font-[Onest] ${
-                        isActive(item.path)
-                          ? "text-[#1B4332]"
-                          : "text-[#2D6A4F]"
+                      className={`block text-base font-medium ${
+                        isActive(item.path) ? "text-blue-600" : "text-gray-800"
                       }`}
                     >
                       {item.name}
@@ -251,7 +243,7 @@ const Navbar = () => {
                     toggleMobileMenu();
                     window.voiceflow?.chat?.open?.();
                   }}
-                  className="mt-6 w-full bg-[#40916C] hover:bg-[#2D6A4F] text-white font-medium py-2 px-4 rounded-full transition font-[Onest]"
+                  className="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full transition"
                 >
                   Talk To Our Assistant
                 </button>
