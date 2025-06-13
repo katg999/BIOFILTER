@@ -54,16 +54,14 @@ const AboutUs = () => {
               Affordable
             </h3>
             <p className="text-gray-600">
-              $15 = 5+ years of clean water per family
+              50,000UGX = 5+ years of clean water per family
             </p>
           </div>
           <div className="bg-blue-50 p-6 rounded-lg">
             <h3 className="font-[Onest] font-bold text-xl text-blue-950 mb-2">
               Effective
             </h3>
-            <p className="text-gray-600">
-              90% pathogen removal (cholera, E. coli)
-            </p>
+            <p className="text-gray-600">90% pathogen removal</p>
           </div>
           <div className="bg-blue-50 p-6 rounded-lg">
             <h3 className="font-[Onest] font-bold text-xl text-blue-950 mb-2">
