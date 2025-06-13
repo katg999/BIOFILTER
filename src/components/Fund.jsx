@@ -1,8 +1,8 @@
 import React from "react";
 import IrrigationImg from "../assets/images/BIO3.jpg";
 import RainWaterImg from "../assets/images/BIO4.jpg";
-import SanitationImg from "../assets/images/BIO5.jpg";
-import VillageImg from "../assets/images/BIO6.jpg";
+import SanitationImg from "../assets/images/BIO26.jpeg";
+import VillageImg from "../assets/images/BIO25.jpeg";
 
 const Fund = () => {
   const cards = [
@@ -24,7 +24,7 @@ const Fund = () => {
       id: 3,
       image: SanitationImg,
       heading: "Sanitation Infrastructure",
-      body: "Filtration units for schools and communities demonstrated here.",
+      body: "Filtration units for schools and communities demonstrated where they are needed most.",
       imageLeft: true,
     },
     {
