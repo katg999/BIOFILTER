@@ -1,9 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import heroImage from "../assets/images/image 37.png";
-import image43 from "../assets/images/image 43.png";
-import image42 from "../assets/images/image 42.png";
-import image41 from "../assets/images/image 41.png";
+import heroImage from "../assets/images/BIO20.jpeg";
+
+import image43 from "../assets/images/BIO21.jpeg";
+import image42 from "../assets/images/BIO22.jpeg";
+import image41 from "../assets/images/BIO23.jpeg";
 import image38 from "../assets/images/image 38.png";
 import image32 from "../assets/images/image 46.png";
 import image45 from "../assets/images/image 45.png";
